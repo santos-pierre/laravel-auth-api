@@ -26,6 +26,8 @@ return [
         'sanctum/csrf-cookie',
         'user/profile-information',
         'email/verification-notification',
+        'github/auth/login',
+        'github/auth/callback'
     ],
 
     'allowed_methods' => ['*'],

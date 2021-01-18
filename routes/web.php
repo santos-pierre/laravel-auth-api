@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,7 @@ Route::get('/', function () {
 Route::get('/csrf-token', function() {
     return csrf_token();
 });
+
+Route::get('github/auth/login', [LoginController::class, 'redirectToProvider']);
+
+Route::get('github/auth/callback', [LoginController::class,'handleProviderCallback']);
