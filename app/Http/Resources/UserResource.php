@@ -18,7 +18,8 @@ class UserResource extends JsonResource
         return [
             'name' => $this->name,
             'email' => $this->email,
-            'is_verified' => !is_null($this->email_verified_at)
+            'is_verified' => !is_null($this->email_verified_at),
+            'is_github_account' => !is_null($this->provider_id) // Check if the user is signed with Github
         ];
     }
 }
